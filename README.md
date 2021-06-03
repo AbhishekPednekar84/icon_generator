@@ -39,7 +39,7 @@ The `site.webmanifest` file is also generated which is required for Android.
 5. For Android, specify the background colour of the icon (default is white) in the `constants.py` file. Specify the colour name and hex value in the `ANDROID_BG` and `ANDROID_BG_HEX` variables respectively
 
 ## Running the program
-1. Place your icon `png` (use a 512x512 file for best results) file in the root folder
+1. Place your icon `png` file (use a file with dimensions of 512x512 for best results) file in the root folder
 2. Run the program from the command line - `python generate_icons.py` or `python3 generate_icons.py`
 3. A new folder called `converted_images` containing the generated favicons,will be created in the project root 
 
