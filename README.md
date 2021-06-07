@@ -41,7 +41,7 @@ The `site.webmanifest` file is also generated which is required for Android.
 ## Running the program
 1. Place your icon `png` file (use a file with dimensions of 512x512 for best results) file in the root folder
 2. Run the program from the command line - `python generate_icons.py` or `python3 generate_icons.py`
-3. A new folder called `converted_images` containing the generated favicons,will be created in the project root 
+3. A new folder called `converted_images` containing the generated favicons will be created in the project root 
 
 **Note**: The name of the output folder can be changed by altering the value of the `OUTPUT_FOLDER` variable in `constants.py`.
 
