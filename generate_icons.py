@@ -11,6 +11,8 @@ from constants import (
     FAVICON_SIZES,
     ANDROID_BG_HEX,
     OUTPUT_FOLDER,
+    MS_ICON_SIZES,
+    MS_BG
 )
 from webmanifest import manifest_data
 
@@ -68,9 +70,32 @@ async def create_android_icons(file):
         new_file = image_bg.resize(size)
 
         new_file.save(
-            f"./{OUTPUT_FOLDER}/android-chrome-{size[0]}x{size[1]}.png", optimize=True
+            f"./{OUTPUT_FOLDER}/android-icon-{size[0]}x{size[1]}.png", optimize=True
         )
         await create_manifest_for_android()
+
+
+async def create_microsoft_icons(file):
+    """
+    Function to generate the Microsoft icons. The file dimensions are specified in constants.py in the ANDROID_ICON_SIZES list.
+
+    Parameters
+    ----------
+    file : .PNG
+
+          A png file present in the project root folder
+    """
+    for size in MS_ICON_SIZES:
+        image_bg = Image.new("RGBA", file.size, f"{MS_BG}")
+        file = file.convert("RGBA")
+        x, y = file.size
+        image_bg.paste(file, (0, 0, x, y), mask=file)
+
+        new_file = image_bg.resize(size)
+
+        new_file.save(
+            f"./{OUTPUT_FOLDER}/ms-icon-{size[0]}x{size[1]}.png", optimize=True
+        )
 
 
 async def create_manifest_for_android():
@@ -120,6 +145,7 @@ async def main():
             await create_main_favicon(image)
             await create_apple_icons(image)
             await create_android_icons(image)
+            await create_microsoft_icons(image)
             await create_favicons(image)
 
 

@@ -12,7 +12,7 @@ APPLE_ICON_SIZES = [
     (180, 180),
 ]
 
-ANDROID_ICON_SIZES = [(192, 192), (384, 384), (512, 512)]
+ANDROID_ICON_SIZES = [(36, 36),(48, 48),(72, 72),(96, 96),(144, 144),(192, 192), (384, 384), (512, 512)]
 
 FAVICON_SIZES = [
     (16, 16),
@@ -24,6 +24,11 @@ FAVICON_SIZES = [
     (144, 144),
 ]
 
+MS_ICON_SIZES = [(70, 70), (144, 144), (150, 150), (310, 310)]
+
 ANDROID_BG = "WHITE"
 ANDROID_BG_HEX = "#FFFFFF"
+
+MS_BG = "WHITE"
+
 OUTPUT_FOLDER = "converted_images"

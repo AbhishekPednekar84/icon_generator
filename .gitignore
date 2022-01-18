@@ -150,5 +150,8 @@ Thumbs.db
 # profiling data
 .prof
 
+# project
+/converted_images
+
 
 # End of https://www.toptal.com/developers/gitignore/api/python
